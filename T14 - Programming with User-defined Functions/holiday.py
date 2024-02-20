@@ -31,20 +31,22 @@ def holiday_cost(city_flight: str, num_nights: int, rental_days: int) -> float:
     return total_cost
 
 
-# user's inputs
-city_flight = input("Enter the city you will be flying to Kyiv/Paris/Tokyo): ")
-num_nights = int(input("Enter the number of nights you will be staying at a hotel: "))
-rental_days = int(input("Enter the number of days for which you will be hiring a car: "))
- 
-# Calculate and print the details about the holiday
-try:
-    total_cost = round(holiday_cost(city_flight, num_nights, rental_days), 2)
+if __name__ == '__main__':
 
-    print("\nHoliday Details\n----------------")
-    print(f"City Flight: {city_flight.capitalize()}")
-    print(f"Number of Nights at Hotel: {abs(num_nights)}")
-    print(f"Number of Days for Car Rental: {abs(rental_days)}")
-    print(f"Total Holiday Cost: £{total_cost}")
+    # user's inputs
+    city_flight = input("Enter the city you will be flying to Kyiv/Paris/Tokyo): ")
+    num_nights = int(input("Enter the number of nights you will be staying at a hotel: "))
+    rental_days = int(input("Enter the number of days for which you will be hiring a car: "))
+    
+    # Calculate and print the details about the holiday
+    try:
+        total_cost = round(holiday_cost(city_flight, num_nights, rental_days), 2)
 
-except ValueError as error:
-    print(error)
+        print("\nHoliday Details\n----------------")
+        print(f"City Flight: {city_flight.capitalize()}")
+        print(f"Number of Nights at Hotel: {abs(num_nights)}")
+        print(f"Number of Days for Car Rental: {abs(rental_days)}")
+        print(f"Total Holiday Cost: £{total_cost}")
+
+    except ValueError as error:
+        print(error)
