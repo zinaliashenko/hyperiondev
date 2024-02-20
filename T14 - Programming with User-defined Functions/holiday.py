@@ -1,10 +1,12 @@
 # holiday.py
 
+# return the price of all nights stay in the hotel
 def hotel_cost(num_nights: int) -> float:
     nightly_rate = 330.20
     return abs(num_nights) * nightly_rate # added a number module in case the user accidentally enters a negative number
 
 
+# return the price of the flight 
 def plane_cost(city_flight: str) -> float:
 
     if city_flight.lower() == "kyiv":
@@ -17,11 +19,13 @@ def plane_cost(city_flight: str) -> float:
         raise ValueError(f"We do not have information for flights to {city_flight}.")
 
 
+# return the price of all rental days
 def car_rental(rental_days: int) -> float:
     daily_rental_cost = 30.20
     return abs(rental_days) * daily_rental_cost # added a number module in case the user accidentally enters a negative number
 
 
+# return the total cost of the holiday
 def holiday_cost(city_flight: str, num_nights: int, rental_days: int) -> float:      
     total_cost = hotel_cost(num_nights) + plane_cost(city_flight) + car_rental(rental_days)
     return total_cost
